@@ -6,4 +6,27 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    - flash.each do |name, msg|
+      = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+    .navbar.navbar-fixed-top.navbar-default
+      .container-fluid
+        .navbar-header
+        %a.navbar-brand(href=root_path) SHOP
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav.navbar-right.social
+            - if user_signed_in?
+              %li
+                = current_user.username
+              %li
+                = link_to :logout, destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to :login, new_user_session_path
+    .container-fluid.content
+      = yield
+      .clearfix
+
+
+    .navbar.navbar-fixed-bottom.navbar-default
+      .container.footer
+        %p &copy; Company 2015
