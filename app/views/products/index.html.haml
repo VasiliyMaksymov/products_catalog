@@ -1,0 +1,11 @@
+.row
+  .col-xs-2.vertical-line
+    .category
+      = link_to :All
+    - @categories.each do  |category|
+      .category
+        = link_to category.name
+  .col-xs-8.products
+    - @products.each do  |product|
+      .product
+        = link_to product.title, product, remote: true

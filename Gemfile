@@ -18,9 +18,11 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise', '3.5.1'
 gem 'pg', '0.18.2'
 
+gem 'rails_admin'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

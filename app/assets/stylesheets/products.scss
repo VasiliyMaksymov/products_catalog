@@ -8,3 +8,22 @@ body {
 .footer {
   text-align: center;
 }
+
+.vertical-line {
+  border-right: 2px solid #72B0E6;
+  margin-top: 20px;
+}
+
+.products {
+  margin-top: 20px;
+
+  .product {
+    margin-top: 10px;
+  }
+
+  .product-image {
+    img{
+      width: 100%;
+    }
+  }
+}

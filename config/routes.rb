@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#show'
+  root 'products#index'
 
-  resource :products
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  resources :products
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
