@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :products
+  resources :reviews
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

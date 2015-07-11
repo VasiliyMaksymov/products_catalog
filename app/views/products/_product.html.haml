@@ -8,3 +8,22 @@
         = @product.title
     .description
       = @product.description
+%hr
+.row
+  .col-xs-12
+    - if user_signed_in?
+      %h3
+        Leave your feedback for this product
+      = render partial: 'reviews/form', locals: {product: @product}
+    -else
+      %h4
+        To leave feedback you need to
+        = link_to 'Login', new_user_session_path
+    - if @product.reviews.count >= 1
+      %h3
+        Feedbacks
+      - @product.reviews.each do |review|
+        = render partial: 'reviews/review', locals: {review: review}
+    - else
+      %h4
+        There are no feedbacks yet. Be first!
