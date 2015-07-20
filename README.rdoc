@@ -1,28 +1,27 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Create simple products catalog
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Accessing the app, user will see list of products, additionally he filter them by category. Clicking on the product will show full info and reviews for that item. After signing in, user will be able to add his reviews.
+
+There should be a superuser, which can create products and categories.
+
+User permissions
+Guest
+can see products listing
+open product page
+Signed In 
+guest + add product reviews
+Super User
+guest + signed in + manage categories, products, reviews (create/edit/remove)
+
+Models
+Category - name:string
+Product - title:string description:text category:references
+Review - msg:text product:reference user:reference
+User - is_admin:boolean + devise
+
+
+Admin should have additional menu link to manage categories.
+
+Add CSS styling using bootstrap or other framework of your choice.
+Upload your project on Github.
